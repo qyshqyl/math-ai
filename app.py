@@ -25,7 +25,7 @@ def ai_generate(level: str, previous: list[str]) -> Problem:
     from google import genai
     client=genai.Client(api_key=API_KEY)
     response=client.models.generate_content(
-        model='gemini-4-argon',
+        model='gemini-3.1-flash-lite',
         contents=generation_prompt(level,previous),
         config={'system_instruction':SYSTEM_PROMPT,'response_mime_type':'application/json','temperature':0.9},
     )
